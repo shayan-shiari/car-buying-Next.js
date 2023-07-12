@@ -16,7 +16,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <header className="flex items-start my-[10px] px-3">
-        <Image src={logo} alt="logo" className="w-[100px]" />
+        <Link href="/">
+          <Image src={logo} alt="logo" className="w-[100px]" />
+        </Link>
         <div className="flex flex-col items-center py-[10px] px-0 w-[370px] mx-[auto] rounded-[5px] bg-mainColor">
           <h2 className="text-[2.3rem] font-bold border-b-[1px] border-solid border-[black] mb-[10px] w-[fit-content]">
             CarDeals
