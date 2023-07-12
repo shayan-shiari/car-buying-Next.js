@@ -1,7 +1,7 @@
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BsSunFill, BsFillMoonFill } from "react-icons/bs";
+import { BsSunFill, BsFillMoonFill, BsBoxArrowInLeft } from "react-icons/bs";
 import logo from "../../public/images/logo.png";
 import Image from "next/image";
 
@@ -15,22 +15,24 @@ const Layout = ({ children }) => {
   if (!mounted) return <></>;
   return (
     <>
-      <header className="flex items-start my-[10px]">
-        <Image src={logo} alt="logo" className="w-[150px]"/>
-        <div className="flex flex-col items-center py-[15px] px-0 w-[440px] mx-[auto] rounded-[5px] bg-mainColor">
-          <Link href="/">
-            <h2 className="text-[2.3rem] font-bold border-b-[1px] border-solid border-[black] mb-[10px] w-[fit-content]">
-              Bama Car
-            </h2>
-            <p>Choose and Buy your car</p>
-          </Link>
+      <header className="flex items-start my-[10px] px-3">
+        <Image src={logo} alt="logo" className="w-[100px]" />
+        <div className="flex flex-col items-center py-[10px] px-0 w-[370px] mx-[auto] rounded-[5px] bg-mainColor">
+          <h2 className="text-[2.3rem] font-bold border-b-[1px] border-solid border-[black] mb-[10px] w-[fit-content]">
+            CarDeals
+          </h2>
+          <p className="text-slate-300">Choose and Buy your car</p>
         </div>
-        <div>
+        <div className="flex gap-x-4">
+          <button className="flex items-center">
+            <BsBoxArrowInLeft className="text-blue-400" size={22} />
+            <span className="dark:text-white text-black">Login</span>
+          </button>
           <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
             {theme === "dark" ? (
-              <BsFillMoonFill className="text-red-400" />
+              <BsFillMoonFill className="text-blue-400" size={22} />
             ) : (
-              <BsSunFill className="text-blue-400" />
+              <BsSunFill className="text-blue-400" size={22} />
             )}
           </button>
         </div>
