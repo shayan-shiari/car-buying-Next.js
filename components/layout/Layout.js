@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [showNav, setShowNav] = useState(false);
-
+  console.log(theme);
   const handleShowNavbar = () => {
     setShowNav(!showNav);
   };
@@ -32,13 +32,19 @@ const Layout = ({ children }) => {
     <>
       <header className="flex items-start my-[12px] px-3">
         <Link href="/" className="mr-[30px] max-[768px]:m-0">
-          <Image src={logo} alt="logo" className="w-[100px] max-[768px]:w-[70px]" />
+          <Image
+            src={logo}
+            alt="logo"
+            className="w-[100px] max-[768px]:w-[70px]"
+          />
         </Link>
         <div className="flex flex-col items-center py-[10px] px-0 w-[370px] mx-[auto] rounded-[5px] bg-mainColor max-[450px]:w-[190px] max-[768px]:w-[250px]">
           <h2 className="text-[2.3rem] max-[450px]:text-[28px] text-white font-bold border-b-[1px] border-solid border-[black] mb-[10px] w-[fit-content]">
             CarDeals
           </h2>
-          <p className="text-slate-300 max-[450px]:text-[13px]">Choose and Buy your car</p>
+          <p className="text-slate-300 max-[450px]:text-[13px]">
+            Choose and Buy your car
+          </p>
         </div>
         <div className="flex gap-x-5 max-[768px]:gap-x-0">
           <button className="relative max-[768px]:mr-2">
@@ -63,16 +69,19 @@ const Layout = ({ children }) => {
               </button>
               <button className="flex items-center max-[768px]:w-[85px] ">
                 <BsBoxArrowInLeft className="text-blue-400" size={22} />
-                <span className="dark:text-white text-black max-[768px]:text-white ">
+                <Link
+                  href="/login"
+                  className="dark:text-white text-black max-[768px]:text-white "
+                >
                   Login
-                </span>
+                </Link>
               </button>
               <Link
                 className="hidden max-[768px]:flex max-[768px]:gap-x-1 w-[85px]"
                 href="/cars"
               >
                 <BsFillCarFrontFill className="text-blue-400" size={22} />
-                <span className="text-whit">all cars</span>
+                <span className="text-white">all cars</span>
               </Link>
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
