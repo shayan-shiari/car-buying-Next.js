@@ -27,3 +27,39 @@ html,body {
 .details p {
   margin-left: 10px;
 }
+
+.cover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .nav-elements {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+    background-color: #1c27c5;
+    width: 0px;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .nav-elements.active {
+    width: 150px;
+  }
+
+  .nav-elements {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 10px 0;
+  }
+}

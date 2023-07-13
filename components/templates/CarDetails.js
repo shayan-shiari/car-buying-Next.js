@@ -21,7 +21,7 @@ const CarDetails = (props) => {
   } = props;
 
   return (
-    <div className="max-w-[900px] m-auto flex flex-col">
+    <div className="max-w-[900px] m-auto flex flex-col max-[768px]:my-0 max-[768px]:mx-[20px]">
       <img src={image} alt="car" className="w-full rounded-[5px]" />
       <h3 className="mt-[40px] mb-[20px] text-[1.5rem]">
         {name} {model}
